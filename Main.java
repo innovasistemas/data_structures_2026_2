@@ -1,3 +1,4 @@
+import com.packages.strings.*;
 import java.util.Scanner;
 
 public class Main 
@@ -30,6 +31,7 @@ public class Main
     public static void menuStrings()
     {
         String option;
+        StringsChar str = new StringsChar();
         do {
             System.out.println("Menú cadenas de caracteres");
             System.out.println("0. Regresar");
@@ -41,7 +43,7 @@ public class Main
                 case "0":
                     break;
                 case "1":
-                    
+                    str.testStrings();
                     break;
                 default:
                     System.out.println("Opción no válida");

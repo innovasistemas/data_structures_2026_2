@@ -1,8 +1,8 @@
-public class Strings
+public class StringsChar
 {
     private String text;
 
-    public Strings()
+    public StringsChar()
     {
         text = "";
     }
