@@ -1,3 +1,5 @@
+package com.packages.strings;
+
 public class StringsChar
 {
     private String text;
