@@ -33,6 +33,7 @@ public class Main
     {
         String option;
         StringsChar str = new StringsChar();
+        PalindromePhrase palin = new PalindromePhrase();
         do {
             System.out.println("Menú cadenas de caracteres");
             System.out.println("0. Regresar");
@@ -40,11 +41,22 @@ public class Main
             System.out.println("2. Palíndromo");
             System.out.print("Ingrese su opción: ");
             option = input.next();
+            input.nextLine();
             switch (option) {
                 case "0":
                     break;
                 case "1":
                     str.testStrings();
+                    break;
+                case "2":
+                    System.out.print("Ingrese un texto: ");
+                    palin.setText(input.next());
+                    input.nextLine();
+                    if (palin.palindrome()) {
+                        System.out.println(palin.getText() + " es palíndromo");
+                    } else {
+                        System.out.println(palin.getText() + " no es palíndromo");
+                    }
                     break;
                 default:
                     System.out.println("Opción no válida");

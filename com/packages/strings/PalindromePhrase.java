@@ -16,7 +16,9 @@ public class PalindromePhrase
     {
         String str = this.text.toUpperCase();
         str = this.deleteSpaces(str);
-        return this.compareCharacters(str);
+        System.out.println(str);
+        // return this.compareCharacters(str);
+        return true;
     }
 
     public String deleteSpaces(String str)
@@ -25,8 +27,8 @@ public class PalindromePhrase
         str = str.trim();
         while (i < str.length()) {
             if (str.substring(i, i + 1).equals(" ")) {
-                str = str.substring(0, i) + 
-                    str.substring(i + 1, str.length() - i);
+                str = str.substring(0, i) + str.substring(i + 1, str.length());
+                // str = str.substring(0, i) + str.substring(i + 1);
             } else {
                 i++;
             }
