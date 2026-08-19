@@ -28,10 +28,10 @@ public class PalindromePhrase
         while (i < str.length()) {
             if (str.substring(i, i + 1).equals(" ")) {
                 str = str.substring(0, i) + str.substring(i + 1, str.length());
-                // str = str.substring(0, i) + str.substring(i + 1);
             } else {
                 i++;
             }
+            i++;
         }
         return str;
     }

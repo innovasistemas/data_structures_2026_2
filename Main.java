@@ -50,8 +50,8 @@ public class Main
                     break;
                 case "2":
                     System.out.print("Ingrese un texto: ");
-                    palin.setText(input.next());
-                    input.nextLine();
+                    palin.setText(input.nextLine());
+                    // input.nextLine();
                     if (palin.palindrome()) {
                         System.out.println(palin.getText() + " es palíndromo");
                     } else {
