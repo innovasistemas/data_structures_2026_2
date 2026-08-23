@@ -31,7 +31,6 @@ public class PalindromePhrase
             } else {
                 i++;
             }
-            i++;
         }
         return str;
     }
