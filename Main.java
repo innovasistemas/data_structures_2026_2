@@ -41,6 +41,7 @@ public class Main
             System.out.println("2. Palíndromo");
             System.out.println("3. Contar palabras");
             System.out.println("4. Mensaje oculto");
+            System.out.println("5. Comparar identificaciones");
             System.out.print("Ingrese su opción: ");
             option = input.next();
             input.nextLine();
@@ -67,6 +68,10 @@ public class Main
                     break;
                 case "4":
                     System.out.println("Mensaje oculto: " + test1.guessPhrase());
+                    break;
+                case "5":
+                    test1.compareDigits("7188", "7178");
+                    break;
                 default:
                     System.out.println("Opción no válida");
             }

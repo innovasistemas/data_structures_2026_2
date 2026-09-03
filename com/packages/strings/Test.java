@@ -76,6 +76,25 @@ public class Test
         } else {
             System.out.println(id2 + " es mayor alfabéticamente");
         }
+        int i, s1, s2;
+        s1 = s2 = 0;
+        for (i = 0; i < id1.length(); i++) {
+            s1 += Integer.parseInt(id1.substring(i, i + 1));
+            // s1 += (int)id1.charAt(i);
+        }
+        for (i = 0; i < id2.length(); i++) {
+            s2 += Integer.parseInt(id2.substring(i, i + 1));
+            // s2 += (int)id2.charAt(i);
+        }
+        System.out.println("Id 1: " + id1);
+        System.out.println("Id 2: " + id2);
+        System.out.println("Suma 1: " + s1);
+        System.out.println("Suma 2: " + s2);
+        if (s1 > s2) {
+            System.out.println("Suma id1 es mayor: ");
+        } else {
+            System.out.println("Suma id2 es mayor: ");
+        }
     }
     
 
