@@ -33,12 +33,14 @@ public class Main
         String option;
         StringsChar str = new StringsChar();
         PalindromePhrase palin = new PalindromePhrase();
+        Test test1 = new Test();
         do {
             System.out.println("Menú cadenas de caracteres");
             System.out.println("0. Regresar");
             System.out.println("1. Pruebas de métodos de cadena");
             System.out.println("2. Palíndromo");
             System.out.println("3. Contar palabras");
+            System.out.println("4. Mensaje oculto");
             System.out.print("Ingrese su opción: ");
             option = input.next();
             input.nextLine();
@@ -59,11 +61,12 @@ public class Main
                     }
                     break;
                 case "3":
-                    Test test1 = new Test();
                     System.out.print("Ingrese un texto: ");
                     test1.setText(input.nextLine());
                     System.out.println("Total palabras: " + test1.countWords2());
                     break;
+                case "4":
+                    System.out.println("Mensaje oculto: " + test1.guessPhrase());
                 default:
                     System.out.println("Opción no válida");
             }

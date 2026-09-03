@@ -1,8 +1,10 @@
 package com.packages.strings;
+import java.util.Scanner;
 
 public class Test 
 {
     private String text;
+    public Scanner input = new Scanner(System.in);
 
     public Test()
     {
@@ -52,6 +54,29 @@ public class Test
         return ++cw;
     }
 
+    public String guessPhrase()
+    {
+        String phrase = "";
+        int num;
+        do { 
+            System.out.println("Número: ");
+            num = input.nextInt();
+            input.nextLine();
+            if (num > 31 && num < 126) {
+                phrase += String.valueOf((char)num);
+            }
+        } while (num > 31 && num < 126);
+        return phrase;
+    }
+
+    public void compareDigits(String id1, String id2)
+    {
+        if (id1.compareTo(id2) > 0) {
+            System.out.println(id1 + " es mayor alfabéticamente");
+        } else {
+            System.out.println(id2 + " es mayor alfabéticamente");
+        }
+    }
     
 
      
