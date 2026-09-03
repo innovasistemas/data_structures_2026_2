@@ -1,5 +1,4 @@
 import com.packages.strings.*;
-
 import java.util.Scanner;
 
 public class Main 
@@ -39,6 +38,7 @@ public class Main
             System.out.println("0. Regresar");
             System.out.println("1. Pruebas de métodos de cadena");
             System.out.println("2. Palíndromo");
+            System.out.println("3. Contar palabras");
             System.out.print("Ingrese su opción: ");
             option = input.next();
             input.nextLine();
@@ -57,6 +57,12 @@ public class Main
                     } else {
                         System.out.println(palin.getText() + " no es palíndromo");
                     }
+                    break;
+                case "3":
+                    Test test1 = new Test();
+                    System.out.print("Ingrese un texto: ");
+                    test1.setText(input.nextLine());
+                    System.out.println("Total palabras: " + test1.countWords2());
                     break;
                 default:
                     System.out.println("Opción no válida");
