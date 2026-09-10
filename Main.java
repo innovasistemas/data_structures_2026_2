@@ -1,4 +1,5 @@
 import com.packages.strings.*;
+import com.packages.arrays.*;
 import java.util.Scanner;
 
 public class Main 
@@ -21,6 +22,9 @@ public class Main
                     break;
                 case "1":
                     menuStrings();
+                    break;
+                case "2":
+                    menuVectors();
                     break;
                 default:
                     System.out.println("Opción no válida");
@@ -71,6 +75,50 @@ public class Main
                     break;
                 case "5":
                     test1.compareDigits("7188", "7178");
+                    break;
+                default:
+                    System.out.println("Opción no válida");
+            }
+        } while (!option.equals("0"));
+    }
+    
+    
+    public static void menuVectors()
+    {
+        String option;
+        Vector objVec = new Vector();
+        int datum;
+        do {
+            System.out.println("Menú Vectores");
+            System.out.println("0. Regresar");
+            System.out.println("1. Agregar dato");
+            System.out.println("2. Mostrar");
+            System.out.println("3. Buscar");
+            System.out.println("4. Suma");
+            System.out.println("5. Promedio");
+            System.out.print("Ingrese su opción: ");
+            option = input.next();
+            input.nextLine();
+            switch (option) {
+                case "0":
+                    break;
+                case "1":
+                    datum = input.nextInt();
+                    input.nextLine();
+                    objVec.addVector(datum);
+                    break;
+                case "2":
+                    if (objVec.getN() > 0) {
+                        Vector.showVector(objVec.getVec(), objVec.getN());
+                    } else {
+                        System.out.println("Vector vacío");
+                    }
+                    break;
+                case "3":
+                    break;
+                case "4":
+                    break;
+                case "5":
                     break;
                 default:
                     System.out.println("Opción no válida");
