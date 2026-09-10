@@ -44,7 +44,56 @@ public class Vector
         }
     }
 
-    
+    public int sumVector()
+    {
+        int s = 0;
+        for (int i = 0; i < n; i = i + 1) {
+            s += vec[i];
+        }
+        return s;
+    }
+
+    public double averageVector()
+    {
+        return (double) sumVector() / n;
+    }
+
+    public int searchVector(int d)
+    {
+        int i, pos;
+        i = 0;
+        pos = -1;
+        while (pos == -1 && i < n) {
+            if (vec[i] == d) {
+                pos = i;
+            } else {
+                i = i + 1;
+            }
+        }
+        return pos;
+    }
+
+    public void deleteVector(int pos)
+    {
+        for (int i = pos; i <= n - 2; i++) {
+            vec[i] = vec[i + 1];
+        }
+        n--;
+    }
+
+    public void insertBeforeVector(int pos, int datum)
+    {
+        for (int i = n; i > pos; i--) {
+            vec[i] = vec[i - 1];
+        }
+        vec[pos] = datum;
+        n++;
+    }
+
+    public void updateVector(int pos, int datum)
+    {
+        vec[pos] = datum;
+    }
 
     
 }

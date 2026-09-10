@@ -87,15 +87,19 @@ public class Main
     {
         String option;
         Vector objVec = new Vector();
-        int datum;
+        int position, datum;
         do {
-            System.out.println("Menú Vectores");
+            System.out.println("\nMenú Vectores");
             System.out.println("0. Regresar");
             System.out.println("1. Agregar dato");
             System.out.println("2. Mostrar");
             System.out.println("3. Buscar");
             System.out.println("4. Suma");
             System.out.println("5. Promedio");
+            System.out.println("6. Eliminar");
+            System.out.println("7. Modificar");
+            System.out.println("8. Insertar");
+            System.out.println("9. Total datos");
             System.out.print("Ingrese su opción: ");
             option = input.next();
             input.nextLine();
@@ -103,9 +107,14 @@ public class Main
                 case "0":
                     break;
                 case "1":
-                    datum = input.nextInt();
-                    input.nextLine();
-                    objVec.addVector(datum);
+                    if (objVec.getN() == objVec.getT()) {
+                        System.out.println("Vector lleno");
+                    } else {
+                        System.out.print("Dato: ");
+                        datum = input.nextInt();
+                        input.nextLine();
+                        objVec.addVector(datum);
+                    }
                     break;
                 case "2":
                     if (objVec.getN() > 0) {
@@ -115,11 +124,93 @@ public class Main
                     }
                     break;
                 case "3":
+                    if (objVec.getN() > 0) {
+                        System.out.print("Dato a buscar: ");
+                        datum = input.nextInt();
+                        input.nextLine();
+                        position = objVec.searchVector(datum);
+                        if (position == -1) {
+                            System.out.print(datum + " no se encuentra");
+                        } else {
+                            System.out.print(datum + " se encuentra en posición " + position);
+                        }
+                    } else {
+                        System.out.println("Vector vacío");
+                    }
                     break;
                 case "4":
+                    if (objVec.getN() > 0) {
+                        System.out.println("Suma vector: " + objVec.sumVector());
+                    } else {
+                        System.out.println("Vector vacío");
+                    }
                     break;
                 case "5":
+                    if (objVec.getN() > 0) {
+                        System.out.println("Promedio vector: " + objVec.averageVector());
+                    } else {
+                        System.out.println("Vector vacío");
+                    }
                     break;
+                case "6":
+                    if (objVec.getN() > 0) {
+                        System.out.print("Dato a eliminar: ");
+                        datum = input.nextInt();
+                        input.nextLine();
+                        position = objVec.searchVector(datum);
+                        if (position == -1) {
+                            System.out.print(datum + " no se encuentra");
+                        } else {
+                            objVec.deleteVector(position);
+                            System.out.println("Dato eliminado correctamente");
+                            Vector.showVector(objVec.getVec(), objVec.getN());
+                        }
+                    } else {
+                        System.out.println("Vector vacío");
+                    }
+                    break;
+                case "7":
+                    if (objVec.getN() > 0) {
+                        System.out.print("Dato a modificar: ");
+                        datum = input.nextInt();
+                        input.nextLine();
+                        position = objVec.searchVector(datum);
+                        if (position == -1) {
+                            System.out.print(datum + " no se encuentra");
+                        } else {
+                            System.out.print("Nuevo dato: ");
+                            datum = input.nextInt();
+                            input.nextLine();
+                            objVec.updateVector(position, datum);
+                            System.out.println("Dato actualizado correctamente");
+                            Vector.showVector(objVec.getVec(), objVec.getN());
+                        }
+                    } else {
+                        System.out.println("Vector vacío");
+                    }
+                    break;
+                case "8":
+                    if (objVec.getN() != objVec.getT()) {
+                        System.out.print("Dato de referencia: ");
+                        datum = input.nextInt();
+                        input.nextLine();
+                        position = objVec.searchVector(datum);
+                        if (position == -1) {
+                            System.out.print(datum + " no se encuentra");
+                        } else {
+                            System.out.print("Dato a insertar: ");
+                            datum = input.nextInt();
+                            input.nextLine();
+                            objVec.insertBeforeVector(position, datum);
+                            System.out.println("Dato insertado correctamente");
+                            Vector.showVector(objVec.getVec(), objVec.getN());
+                        }
+                    } else {
+                        System.out.println("Vector lleno");
+                    }
+                    break;
+                case "9":
+                    System.out.println("Total datos: " + objVec.getN());
                 default:
                     System.out.println("Opción no válida");
             }
