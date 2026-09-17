@@ -2,11 +2,10 @@ import com.packages.strings.*;
 import com.packages.arrays.*;
 import java.util.Scanner;
 
-public class Main 
-{
+public class Main {
     public static Scanner input = new Scanner(System.in);
-    public static void main(String[] args)
-    {
+
+    public static void main(String[] args) {
         String option;
         do {
             System.out.println("Menú de opciones");
@@ -32,8 +31,7 @@ public class Main
         } while (!option.equals("0"));
     }
 
-    public static void menuStrings()
-    {
+    public static void menuStrings() {
         String option;
         StringsChar str = new StringsChar();
         PalindromePhrase palin = new PalindromePhrase();
@@ -81,10 +79,8 @@ public class Main
             }
         } while (!option.equals("0"));
     }
-    
-    
-    public static void menuVectors()
-    {
+
+    public static void menuVectors() {
         String option;
         Vector objVec = new Vector();
         int position, datum;
@@ -100,6 +96,7 @@ public class Main
             System.out.println("7. Modificar");
             System.out.println("8. Insertar");
             System.out.println("9. Total datos");
+            System.out.println("10. Unión");
             System.out.print("Ingrese su opción: ");
             option = input.next();
             input.nextLine();
@@ -211,6 +208,17 @@ public class Main
                     break;
                 case "9":
                     System.out.println("Total datos: " + objVec.getN());
+                    break;
+                case "10":
+                    int[] A = {1, 2, 3, 4};
+                    int[] B = {1, 5, 3, 0, 100, 4};
+                    int m = 4;
+                    int p = 6;
+                    objVec.unionSet(A, B, m, p);
+                    objVec.showVector(objVec.getC(), objVec.getQ());
+                    objVec.intersectSet(A, B, m, p);
+                    objVec.showVector(objVec.getC(), objVec.getQ());
+                    break;
                 default:
                     System.out.println("Opción no válida");
             }
