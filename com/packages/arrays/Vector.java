@@ -120,6 +120,25 @@ public class Vector {
         }
     }
 
-    public void intersectSet()
+    public void intersectSet(int A[], int B[], int m, int p)
+    {
+        int i;
+        q = 0;
+        for (i = 0; i < m; i++) {
+            int j = 0;
+            boolean sw = false;
+            while (!sw && j < p) {
+                if (A[i] == B[j]) {
+                    sw = true;
+                } else {
+                    j++;
+                }
+            }
+            if (sw) {
+                C[q] = A[i];
+                q++;
+            }
+        }
+    }
 
 }

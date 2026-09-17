@@ -96,7 +96,7 @@ public class Main {
             System.out.println("7. Modificar");
             System.out.println("8. Insertar");
             System.out.println("9. Total datos");
-            System.out.println("10. Unión");
+            System.out.println("10. Unión - Intersección");
             System.out.print("Ingrese su opción: ");
             option = input.next();
             input.nextLine();
@@ -211,13 +211,15 @@ public class Main {
                     break;
                 case "10":
                     int[] A = {1, 2, 3, 4};
-                    int[] B = {1, 5, 3, 0, 100, 4};
+                    int[] B = {1, 5, 3, 0, 100};
                     int m = 4;
-                    int p = 6;
+                    int p = 5;
                     objVec.unionSet(A, B, m, p);
-                    objVec.showVector(objVec.getC(), objVec.getQ());
+                    System.out.println("Unión");
+                    Vector.showVector(objVec.getC(), objVec.getQ());
                     objVec.intersectSet(A, B, m, p);
-                    objVec.showVector(objVec.getC(), objVec.getQ());
+                    System.out.println("Intersección");
+                    Vector.showVector(objVec.getC(), objVec.getQ());
                     break;
                 default:
                     System.out.println("Opción no válida");
